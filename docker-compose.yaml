@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  node:
+    image: node:lts
+    container_name: node
+    ports:
+      - "3000:3000"
+    tty: true
+    volumes:
+      - /:/develop
+    working_dir: "/develop"
+
+  gradle:
+    image: gradle:latest
+    container_name: gradle
+    volumes:
+      - /:/develop
+    working_dir: "/develop"
